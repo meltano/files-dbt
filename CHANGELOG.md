@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0
+
+- [#4](https://gitlab.com/meltano/files-dbt/-/issues/4) Add `config-version: 2` to `transform/dbt_project.yml`
+
 ## 0.3
 
 - [#3](https://gitlab.com/meltano/files-dbt/-/issues/3) Cast `PG_PORT` to `int` for postgres output in `transform/profile/profiles.yml`
