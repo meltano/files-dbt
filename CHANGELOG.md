@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4
+
+- Add support for `snowflake` profile as extra: `pip install 'git+https://gitlab.com/meltano/files-dbt.git@config-version-2#egg=repo[snowflake]'`.
+
 ## 0.3
 
 - [#3](https://gitlab.com/meltano/files-dbt/-/issues/3) Cast `PG_PORT` to `int` for postgres output in `transform/profile/profiles.yml`
