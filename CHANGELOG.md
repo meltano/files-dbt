@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.3
+## 0.4
 
-- [#3](https://gitlab.com/meltano/files-dbt/-/issues/3) Cast `PG_PORT` to `int` for postgres output in `transform/profile/profiles.yml`
+- Initial fork of `files-dbt-snowflake`, inherits from the core `dbt-files`.
 
 ## 0.2
 

@@ -1,0 +1,35 @@
+# Snowflake config reference: https://docs.getdbt.com/reference/warehouse-profiles/snowflake-profile
+#
+# We recommend storing credentials in a .env file, and always include `.env` to your `.gitignore` rules.
+#
+# Warning: Do not store credentials in this file unless you've take the necessary steps to remove
+# this file from your git commit.
+config:
+  send_anonymous_usage_stats: False
+  use_colors: True
+meltano:
+  target: snowflake-devtest  # The default profile name if no other profile is selected.
+  outputs:
+    # TODO: Optionally, revise or add to these profiles to reflect your own environments.
+    snowflake-devtest:
+      type: snowflake
+      threads: 2
+      account: "{{ env_var('TARGET_SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('TARGET_SNOWFLAKE_USER') }}"
+      password: "{{ env_var('TARGET_SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('TARGET_SNOWFLAKE_ROLE') }}"
+      warehouse: "{{ env_var('TARGET_SNOWFLAKE_WAREHOUSE') }}"
+      # TODO: Override the schema and DB to reflect your desired 'devtest' landing zone
+      database: "{{ env_var('TARGET_SNOWFLAKE_DATABASE') }}"
+      schema: "{{ env_var('DBT_TARGET_SCHEMA', 'devtest') }}"
+    snowflake-prod:
+      type: snowflake
+      threads: 2
+      account: "{{ env_var('TARGET_SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('TARGET_SNOWFLAKE_USER') }}"
+      password: "{{ env_var('TARGET_SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('TARGET_SNOWFLAKE_ROLE') }}"
+      warehouse: "{{ env_var('TARGET_SNOWFLAKE_WAREHOUSE') }}"
+      # TODO: Override the schema and DB to reflect your desired 'prod' landing zone
+      database: "{{ env_var('SF_DATABASE') }}"
+      schema: "{{ env_var('DBT_TARGET_SCHEMA', 'prod') }}"

@@ -1,16 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="files-dbt",
-    version="0.3",
-    description="Meltano project files for dbt",
+    name="files-dbt-snowflake",
+    version="0.4",
+    description="Meltano project files for dbt on Snowflake",
     packages=find_packages(),
     package_data={
         "bundle": [
-            "transform/models/.gitkeep",
-            "transform/profile/profiles.yml",
-            "transform/.gitignore",
-            "transform/dbt_project.yml",
+            "transform/profile/snowflake-profiles.yml",
         ]
     },
 )
