@@ -21,7 +21,7 @@ meltano:
       port: "{{ env_var('TARGET_POSTGRES_PORT') | int }}"
       user: "{{ env_var('TARGET_POSTGRES_USER') }}"
       pass: "{{ env_var('TARGET_POSTGRESS_PASSWORD') }}"
-      dbname: "{{ env_var('TARGET_POSTGRES_DATABASE') }}"
+      dbname: "{{ env_var('TARGET_POSTGRES_DBNAME') }}"
       schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
     bigquery:
       type: bigquery
